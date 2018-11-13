@@ -1,0 +1,9 @@
+manifest = "a7f56da366dcf97f5bc95690cb3e5c2f62b791a846daa00e3717352b18b2c05c"
+
+[[dependency]]
+package = "github.com/buckaroo-pm/xiph-ogg"
+target = "//:ogg"
+
+[[lock]]
+name = "github.com/buckaroo-pm/xiph-ogg"
+revision = "82b18eecd378eff6f5fd77db8c49cc1f8deeadff"

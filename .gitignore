@@ -75,3 +75,9 @@ test/picture.diff
 test/picture.log
 .dirstamp
 microbench/benchmark_residual
+/buck-out
+/.buckd
+/cache
+/buckaroo
+/buckaroo-packages
+BUCKAROO_DEPS

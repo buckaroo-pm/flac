@@ -1,0 +1,8 @@
+[cxx]
+  should_remap_host_platform = true
+
+[project]
+  ignore = .git
+
+[repositories]
+  buckaroo.github.buckaroo-pm.xiph-ogg = ./buckaroo-packages/github/buckaroo-pm/xiph-ogg
