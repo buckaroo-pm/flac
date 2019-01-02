@@ -3,6 +3,3 @@
 
 [project]
   ignore = .git
-
-[repositories]
-  buckaroo.github.buckaroo-pm.xiph-ogg = ./buckaroo-packages/github/buckaroo-pm/xiph-ogg
