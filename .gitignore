@@ -81,3 +81,5 @@ microbench/benchmark_residual
 /buckaroo
 /buckaroo-packages
 BUCKAROO_DEPS
+.buckconfig.d
+buckaroo_macros.bzl

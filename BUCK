@@ -2,6 +2,10 @@ macos_flags = [
   '-DHAVE_SYS_PARAM_H',
 ]
 
+linux_flags = [
+  '-DHAVE_STDINT_H',
+]
+
 windows_sources = [
   'src/libFLAC/windows_unicode_filenames.c',
 ]
@@ -15,7 +19,7 @@ cxx_library(
     ('src/libFLAC/include', '**/*.h'),
   ]),
   srcs = glob([
-    'src/libFLAC/**/*.c', 
+    'src/libFLAC/**/*.c',
   ],
   excludes = windows_sources),
   compiler_flags = [
@@ -27,10 +31,11 @@ cxx_library(
   platform_compiler_flags = [
     ('default', macos_flags),
     ('^macos.*', macos_flags),
-  ], 
+    ('^linux.*', linux_flags),
+  ],
   deps = [
-    'buckaroo.github.buckaroo-pm.xiph-ogg//:ogg', 
-  ], 
+    'buckaroo.github.buckaroo-pm.xiph-ogg//:ogg',
+  ],
   visibility = [
     'PUBLIC',
   ],
@@ -41,8 +46,6 @@ cxx_library(
   header_namespace = '',
   exported_headers = subdir_glob([
     ('include', 'FLAC++/**/*.h'),
-    # ('include', 'share/**/*.h'),
-    # ('src/libFLAC++/include', '**/*.h'),
   ]),
   srcs = glob([
     'src/libFLAC++/**/*.cpp',
