@@ -6,4 +6,4 @@ target = "//:ogg"
 
 [lock."github.com/buckaroo-pm/xiph-ogg"]
 versions = [ "branch=master" ]
-revision = "5e03ad6a7cb1bf944a0129353ea559ca997744a5"
+revision = "eb31a551c48339c07aa2af9fb8baeac7988f4f81"
