@@ -56,6 +56,8 @@
 #   else
 #    define SIZE_T_MAX 0xffffffff
 #   endif
+#  elif defined __GNUC__
+#   define SIZE_T_MAX UINT_MAX
 #  else
 #   error
 #  endif
