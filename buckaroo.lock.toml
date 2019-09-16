@@ -1,4 +1,4 @@
-manifest = "25e39335ec16b6b858a1b1405433a713b24b78d6e13f021f91f1070836a9e36f"
+manifest = "9b152d8c787c333cfb95a49a12857b457023cef79b519ad532e34d3d3d1afed8"
 
 [[dependency]]
 package = "github.com/buckaroo-pm/xiph-ogg"
@@ -6,4 +6,4 @@ target = "//:ogg"
 
 [lock."github.com/buckaroo-pm/xiph-ogg"]
 versions = [ "branch=master" ]
-revision = "5e03ad6a7cb1bf944a0129353ea559ca997744a5"
+revision = "8d482c24a88e1b121508fb7a64198f9decd673e6"

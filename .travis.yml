@@ -1,20 +1,40 @@
-language: c
+language: cpp
+sudo: true
+dist: bionic
+
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-6
+      - gcc-6
+      - make
+      - pkg-config
+      - zip
+      - g++
+      - zlib1g-dev
+      - unzip
+      - python3
 
 os:
   - linux
   - osx
-
-compiler:
-  - gcc
-  - clang
+  - windows
 
 env:
-  -
-  - CONFIGURE_OPTS=--enable-64-bit-words
+  - BUCKAROO_VERSION=v2.2.0 PKG_CONFIG_PATH=/usr/lib/pkgconfig
+  - BUCKAROO_VERSION=bazel-alpha-1 BUCKAROO_USE_BAZEL=1 PKG_CONFIG_PATH=/usr/lib/pkgconfig MSYS2_ARG_CONV_EXCL="//"
 
-install:
-  - if [ $TRAVIS_OS_NAME = linux ]; then sudo apt-get -y install libogg-dev; fi
-  - if [ $TRAVIS_OS_NAME = osx ]; then brew install libogg; fi
+cache:
+  directories:
+    - $HOME/.buckaroo/cache
+    - $TRAVIS_BUILD_DIR/bin
+
+osx_image: xcode9.3
+
+before_install:
+  - ./travis/before-install-$TRAVIS_OS_NAME.sh
 
 script:
-  - ./autogen.sh && ./configure $CONFIGURE_OPTS && make && make check
+  - ./travis/script.sh

@@ -83,3 +83,5 @@ microbench/benchmark_residual
 BUCKAROO_DEPS
 .buckconfig.d
 buckaroo_macros.bzl
+bazel-*
+.ionide
