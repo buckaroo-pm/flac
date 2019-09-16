@@ -1,5 +1,12 @@
 #!/bin/bash
 
+mkdir -p bin
+
+wget -c https://github.com/LoopPerfect/buckaroo/releases/download/$BUCKAROO_VERSION/buckaroo-macos -O bin/buckaroo
+chmod +x ./bin/buckaroo
+sudo cp ./bin/buckaroo /usr/local/bin/buckaroo
+buckaroo version
+
 if [ $BUCKAROO_USE_BAZEL ]
 then
 
@@ -13,16 +20,9 @@ c++ --version
 g++ --version
 gcc --version
 
-mkdir -p bin
-
 wget -c https://github.com/njlr/buck-warp/releases/download/v0.2.0/buck-2019.01.10.01-osx -O bin/buck
 chmod +x ./bin/buck
 sudo cp ./bin/buck /usr/local/bin/buck
 buck --version
-
-wget -c https://github.com/LoopPerfect/buckaroo/releases/download/$BUCKAROO_VERSION/buckaroo-macos -O bin/buckaroo
-chmod +x ./bin/buckaroo
-sudo cp ./bin/buckaroo /usr/local/bin/buckaroo
-buckaroo version
 
 fi
