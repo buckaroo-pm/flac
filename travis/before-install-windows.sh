@@ -4,7 +4,7 @@ mkdir -p bin
 
 wget -c https://github.com/LoopPerfect/buckaroo/releases/download/$BUCKAROO_VERSION/buckaroo-windows.exe -O bin/buckaroo
 chmod +x ./bin/buckaroo
-sudo cp ./bin/buckaroo /usr/bin/buckaroo
+cp ./bin/buckaroo /usr/bin/buckaroo
 buckaroo version
 
 if [ $BUCKAROO_USE_BAZEL ]
